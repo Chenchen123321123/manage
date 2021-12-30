@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.manage.mapper.LoginMapper">
+    <resultMap type="User" id="UserMap">
+        <id column="user_id" property="user_id" jdbcType="VARCHAR" />
+        <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+        <result column="login_id" property="login_id" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="queryUserInfoByLoginId" parameterType="com.manage.entity.User" resultMap="UserMap">
+        select *
+        from m_user
+        where 1=1
+        and login_id = #{login_id,jdbcType=VARCHAR}
+    </select>
+</mapper>
