@@ -14,4 +14,10 @@
         where 1=1
         and login_id = #{login_id,jdbcType=VARCHAR}
     </select>
+
+    <insert id="insertUserInfo" parameterType="com.manage.entity.User">
+        insert into m_user(user_id,use_name,login_id,password,sex,salt)
+        values
+        (#{user_id},#{register_username},#{register_login_id},#{register_password},#{register_sex},#{salt})
+    </insert>
 </mapper>

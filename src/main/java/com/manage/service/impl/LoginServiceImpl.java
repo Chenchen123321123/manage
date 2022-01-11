@@ -15,4 +15,10 @@ public class LoginServiceImpl implements LoginService {
         // TODO Auto-generated method stub
         return loginMapper.queryUserInfoByLoginId(id);
     }
+
+    @Override
+    public int insertUserInfo(User user) {
+        // TODO Auto-generated method stub
+        return loginMapper.insertUserInfo(user);
+    }
 }
